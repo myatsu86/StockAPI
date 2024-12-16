@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, render_template, request
 import requests
+import os
 
 app = Flask(__name__)
 API_URL = "https://www.alphavantage.co/query"
-API_KEY = "7UNULEQICQG18WXD"
+API_KEY = os.getenv("API_KEY", "No API Key Provided")
 
 
 # @app.route("/")

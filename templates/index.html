@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data Lookup</title>
+</head>
+<body>
+    <h1>Stock Data Lookup</h1>
+
+    <!-- Form -->
+    <form method="POST" action="/">
+        <label for="symbol">Enter Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Stock Data -->
+    {% if stock_data %}
+        <h2>Stock Live Data</h2>
+        <pre>
+{
+  "price": "{{ stock_data['price'] }}",
+  "symbol": "{{ stock_data['symbol'] }}",
+  "time": "{{ stock_data['time'] }}"
+}
+        </pre>
+    {% elif error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

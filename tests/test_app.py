@@ -10,5 +10,6 @@ def test_get_stock():
     response = requests.get(f"{BASE_URL}/stock/AAPL")
     assert response.status_code == 200  # Check if the response is OK
     data = response.json()
+    print(data)
     assert "symbol" in data
     assert data["symbol"] == "AAPL"

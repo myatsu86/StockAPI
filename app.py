@@ -39,7 +39,7 @@ def import_symbol():
                 'time': latest_time
             }
         else:
-            error_message = f"Error fetching data for symbol: {symbol}. Details: {str(e)}"
+            error_message = f"Error fetching data for symbol: {symbol}."
         # return f"Import logic for symbol: {symbol}"
     else:
         error_message = "Please provide a valid symbol."

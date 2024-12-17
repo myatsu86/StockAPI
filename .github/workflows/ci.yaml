@@ -22,7 +22,9 @@ jobs:
     - name: Build Docker Image
       run: |
         docker build -t flask-stock-app .
+        docker tag flask-stock-app myatsumon/flask-stock-app:12-17-2024
+        docker push
 
-    - name: Run Docker Container
-      run: |
-        docker run -d -p 5000:5000 --env API_KEY=${{ secrets.API_KEY }} flask-stock-app
+    # - name: Run Docker Container
+    #   run: |
+    #     docker run -d -p 5000:5000 --env API_KEY=${{ secrets.API_KEY }} flask-stock-app

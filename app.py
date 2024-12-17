@@ -39,12 +39,13 @@ def import_symbol():
                 'time': latest_time
             }
         else:
-            error_message = f"Error fetching data for symbol: {symbol}. Details: {str(e)}"
+            error_message = f"Error fetching data for symbol: {symbol}."
         # return f"Import logic for symbol: {symbol}"
     else:
         error_message = "Please provide a valid symbol."
-    print(stock_data)
-    return render_template("index.html", stock_data=stock_data, error_message=error_message)
+
+    return render_template("index.html", stock_data=stock_data,
+                           error_message=error_message)
 
 
 @app.route('/stock/<string:symbol>', methods=['GET'])

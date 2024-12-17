@@ -23,7 +23,7 @@ jobs:
       run: |
         docker build -t flask-stock-app .
         docker tag flask-stock-app myatsumon/flask-stock-app:12-17-2024
-        docker push
+        docker push myatsumon/flask-stock-app:12-17-2024
 
     # - name: Run Docker Container
     #   run: |
